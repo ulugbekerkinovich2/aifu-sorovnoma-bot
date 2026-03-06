@@ -1,0 +1,991 @@
+[
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Bot",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "Dispatcher",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "types",
+        "importPath": "aiogram",
+        "description": "aiogram",
+        "isExtraImport": true,
+        "detail": "aiogram",
+        "documentation": {}
+    },
+    {
+        "label": "MemoryStorage",
+        "importPath": "aiogram.contrib.fsm_storage.memory",
+        "description": "aiogram.contrib.fsm_storage.memory",
+        "isExtraImport": true,
+        "detail": "aiogram.contrib.fsm_storage.memory",
+        "documentation": {}
+    },
+    {
+        "label": "FSMContext",
+        "importPath": "aiogram.dispatcher",
+        "description": "aiogram.dispatcher",
+        "isExtraImport": true,
+        "detail": "aiogram.dispatcher",
+        "documentation": {}
+    },
+    {
+        "label": "executor",
+        "importPath": "aiogram.utils",
+        "description": "aiogram.utils",
+        "isExtraImport": true,
+        "detail": "aiogram.utils",
+        "documentation": {}
+    },
+    {
+        "label": "ADMIN_IDS",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "APP_TITLE",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "BOT_TOKEN",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_LANG",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "EXPORTS_DIR",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "I18N",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "PROGRESS_DIR",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "QUESTIONNAIRE_XLSX",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "RESPONSES_DIR",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "EXPORTS_DIR",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "PROGRESS_DIR",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "QUESTIONNAIRE_XLSX",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "RESPONSES_DIR",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "I18N",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "SUPPORTED_LANGS",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "export_responses_to_excel",
+        "importPath": "exporter",
+        "description": "exporter",
+        "isExtraImport": true,
+        "detail": "exporter",
+        "documentation": {}
+    },
+    {
+        "label": "export_responses_to_excel",
+        "importPath": "exporter",
+        "description": "exporter",
+        "isExtraImport": true,
+        "detail": "exporter",
+        "documentation": {}
+    },
+    {
+        "label": "language_keyboard",
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "isExtraImport": true,
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "multi_choice_keyboard",
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "isExtraImport": true,
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "remove_keyboard",
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "isExtraImport": true,
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "single_choice_keyboard",
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "isExtraImport": true,
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "survey_keyboard",
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "isExtraImport": true,
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "text_answer_keyboard",
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "isExtraImport": true,
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "SurveyStates",
+        "importPath": "states",
+        "description": "states",
+        "isExtraImport": true,
+        "detail": "states",
+        "documentation": {}
+    },
+    {
+        "label": "JsonRepository",
+        "importPath": "storage",
+        "description": "storage",
+        "isExtraImport": true,
+        "detail": "storage",
+        "documentation": {}
+    },
+    {
+        "label": "JsonRepository",
+        "importPath": "storage",
+        "description": "storage",
+        "isExtraImport": true,
+        "detail": "storage",
+        "documentation": {}
+    },
+    {
+        "label": "load_questionnaire",
+        "importPath": "survey_loader",
+        "description": "survey_loader",
+        "isExtraImport": true,
+        "detail": "survey_loader",
+        "documentation": {}
+    },
+    {
+        "label": "load_questionnaire",
+        "importPath": "survey_loader",
+        "description": "survey_loader",
+        "isExtraImport": true,
+        "detail": "survey_loader",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "Workbook",
+        "importPath": "openpyxl",
+        "description": "openpyxl",
+        "isExtraImport": true,
+        "detail": "openpyxl",
+        "documentation": {}
+    },
+    {
+        "label": "load_workbook",
+        "importPath": "openpyxl",
+        "description": "openpyxl",
+        "isExtraImport": true,
+        "detail": "openpyxl",
+        "documentation": {}
+    },
+    {
+        "label": "Alignment",
+        "importPath": "openpyxl.styles",
+        "description": "openpyxl.styles",
+        "isExtraImport": true,
+        "detail": "openpyxl.styles",
+        "documentation": {}
+    },
+    {
+        "label": "Font",
+        "importPath": "openpyxl.styles",
+        "description": "openpyxl.styles",
+        "isExtraImport": true,
+        "detail": "openpyxl.styles",
+        "documentation": {}
+    },
+    {
+        "label": "PatternFill",
+        "importPath": "openpyxl.styles",
+        "description": "openpyxl.styles",
+        "isExtraImport": true,
+        "detail": "openpyxl.styles",
+        "documentation": {}
+    },
+    {
+        "label": "get_column_letter",
+        "importPath": "openpyxl.utils",
+        "description": "openpyxl.utils",
+        "isExtraImport": true,
+        "detail": "openpyxl.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Survey",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Survey",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Block",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Option",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "InlineKeyboardMarkup",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "KeyboardButton",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "ReplyKeyboardMarkup",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "ReplyKeyboardRemove",
+        "importPath": "aiogram.types",
+        "description": "aiogram.types",
+        "isExtraImport": true,
+        "detail": "aiogram.types",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "aiogram.dispatcher.filters.state",
+        "description": "aiogram.dispatcher.filters.state",
+        "isExtraImport": true,
+        "detail": "aiogram.dispatcher.filters.state",
+        "documentation": {}
+    },
+    {
+        "label": "StatesGroup",
+        "importPath": "aiogram.dispatcher.filters.state",
+        "description": "aiogram.dispatcher.filters.state",
+        "isExtraImport": true,
+        "detail": "aiogram.dispatcher.filters.state",
+        "documentation": {}
+    },
+    {
+        "label": "now_iso",
+        "kind": 2,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "def now_iso() -> str:\n    return datetime.now().isoformat(timespec=\"seconds\")\ndef tr(lang: str, key: str, **kwargs) -> str:\n    lang = lang if lang in I18N else DEFAULT_LANG\n    text = I18N[lang].get(key) or I18N[DEFAULT_LANG].get(key) or key\n    return text.format(**kwargs) if kwargs else text\ndef build_user_dict(user: types.User):\n    return {\n        \"telegram_user_id\": user.id,\n        \"username\": user.username or \"\",",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "tr",
+        "kind": 2,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "def tr(lang: str, key: str, **kwargs) -> str:\n    lang = lang if lang in I18N else DEFAULT_LANG\n    text = I18N[lang].get(key) or I18N[DEFAULT_LANG].get(key) or key\n    return text.format(**kwargs) if kwargs else text\ndef build_user_dict(user: types.User):\n    return {\n        \"telegram_user_id\": user.id,\n        \"username\": user.username or \"\",\n        \"first_name\": user.first_name or \"\",\n        \"last_name\": user.last_name or \"\",",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "build_user_dict",
+        "kind": 2,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "def build_user_dict(user: types.User):\n    return {\n        \"telegram_user_id\": user.id,\n        \"username\": user.username or \"\",\n        \"first_name\": user.first_name or \"\",\n        \"last_name\": user.last_name or \"\",\n        \"full_name\": user.full_name,\n    }\nasync def get_user_lang(state: FSMContext, user_id: int) -> str:\n    data = await state.get_data()",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_question",
+        "kind": 2,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "def get_current_question(session):\n    return surveys[session[\"survey_code\"]].questions[session[\"question_index\"]]\ndef build_question_text(session):\n    lang = session.get(\"lang\", DEFAULT_LANG)\n    survey = surveys[session[\"survey_code\"]]\n    question = get_current_question(session)\n    block = survey.blocks[question.block_code]\n    lines = [\n        f\"<b>{survey.get_title(lang)}</b>\",\n        f\"👥 {survey.get_audience(lang)}\",",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "build_question_text",
+        "kind": 2,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "def build_question_text(session):\n    lang = session.get(\"lang\", DEFAULT_LANG)\n    survey = surveys[session[\"survey_code\"]]\n    question = get_current_question(session)\n    block = survey.blocks[question.block_code]\n    lines = [\n        f\"<b>{survey.get_title(lang)}</b>\",\n        f\"👥 {survey.get_audience(lang)}\",\n        f\"📚 {block.roman_no} {tr(lang, 'block_label')}: {block.get_title(lang)}\",\n        f\"❓ {tr(lang, 'question_label')} {session['question_index'] + 1}/{len(survey.questions)}\",",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "validate_text_answer",
+        "kind": 2,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "def validate_text_answer(question, text, lang):\n    text = text.strip()\n    if not text:\n        return False, tr(lang, \"empty_answer\")\n    if question.validation_regex and not re.match(question.validation_regex, text):\n        if question.question_type == \"integer\":\n            return False, tr(lang, \"integer_error\")\n        if question.question_type == \"phone\":\n            return False, tr(lang, \"phone_error\")\n        return False, tr(lang, \"format_error\")",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "bot",
+        "kind": 5,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "bot = Bot(token=BOT_TOKEN, parse_mode=\"HTML\")\ndp = Dispatcher(bot, storage=MemoryStorage())\nsurveys = load_questionnaire(QUESTIONNAIRE_XLSX)\nrepo = JsonRepository(PROGRESS_DIR, RESPONSES_DIR)\ndef now_iso() -> str:\n    return datetime.now().isoformat(timespec=\"seconds\")\ndef tr(lang: str, key: str, **kwargs) -> str:\n    lang = lang if lang in I18N else DEFAULT_LANG\n    text = I18N[lang].get(key) or I18N[DEFAULT_LANG].get(key) or key\n    return text.format(**kwargs) if kwargs else text",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "dp",
+        "kind": 5,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "dp = Dispatcher(bot, storage=MemoryStorage())\nsurveys = load_questionnaire(QUESTIONNAIRE_XLSX)\nrepo = JsonRepository(PROGRESS_DIR, RESPONSES_DIR)\ndef now_iso() -> str:\n    return datetime.now().isoformat(timespec=\"seconds\")\ndef tr(lang: str, key: str, **kwargs) -> str:\n    lang = lang if lang in I18N else DEFAULT_LANG\n    text = I18N[lang].get(key) or I18N[DEFAULT_LANG].get(key) or key\n    return text.format(**kwargs) if kwargs else text\ndef build_user_dict(user: types.User):",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "surveys",
+        "kind": 5,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "surveys = load_questionnaire(QUESTIONNAIRE_XLSX)\nrepo = JsonRepository(PROGRESS_DIR, RESPONSES_DIR)\ndef now_iso() -> str:\n    return datetime.now().isoformat(timespec=\"seconds\")\ndef tr(lang: str, key: str, **kwargs) -> str:\n    lang = lang if lang in I18N else DEFAULT_LANG\n    text = I18N[lang].get(key) or I18N[DEFAULT_LANG].get(key) or key\n    return text.format(**kwargs) if kwargs else text\ndef build_user_dict(user: types.User):\n    return {",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "repo",
+        "kind": 5,
+        "importPath": "bot",
+        "description": "bot",
+        "peekOfCode": "repo = JsonRepository(PROGRESS_DIR, RESPONSES_DIR)\ndef now_iso() -> str:\n    return datetime.now().isoformat(timespec=\"seconds\")\ndef tr(lang: str, key: str, **kwargs) -> str:\n    lang = lang if lang in I18N else DEFAULT_LANG\n    text = I18N[lang].get(key) or I18N[DEFAULT_LANG].get(key) or key\n    return text.format(**kwargs) if kwargs else text\ndef build_user_dict(user: types.User):\n    return {\n        \"telegram_user_id\": user.id,",
+        "detail": "bot",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent\nload_dotenv(BASE_DIR / \".env\")\nBOT_TOKEN = os.getenv(\"BOT_TOKEN\", \"\").strip()\nADMIN_IDS = {\n    int(item.strip())\n    for item in os.getenv(\"ADMIN_IDS\", \"\").split(\",\")\n    if item.strip().isdigit()\n}\nQUESTIONNAIRE_XLSX = Path(\n    os.getenv(",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "BOT_TOKEN",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "BOT_TOKEN = os.getenv(\"BOT_TOKEN\", \"\").strip()\nADMIN_IDS = {\n    int(item.strip())\n    for item in os.getenv(\"ADMIN_IDS\", \"\").split(\",\")\n    if item.strip().isdigit()\n}\nQUESTIONNAIRE_XLSX = Path(\n    os.getenv(\n        \"QUESTIONNAIRE_XLSX\",\n        str(BASE_DIR / \"questionnaire\" / \"aifu_questionnaire_config.xlsx\"),",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "ADMIN_IDS",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "ADMIN_IDS = {\n    int(item.strip())\n    for item in os.getenv(\"ADMIN_IDS\", \"\").split(\",\")\n    if item.strip().isdigit()\n}\nQUESTIONNAIRE_XLSX = Path(\n    os.getenv(\n        \"QUESTIONNAIRE_XLSX\",\n        str(BASE_DIR / \"questionnaire\" / \"aifu_questionnaire_config.xlsx\"),\n    )",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "QUESTIONNAIRE_XLSX",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "QUESTIONNAIRE_XLSX = Path(\n    os.getenv(\n        \"QUESTIONNAIRE_XLSX\",\n        str(BASE_DIR / \"questionnaire\" / \"aifu_questionnaire_config.xlsx\"),\n    )\n).resolve()\nDATA_DIR = Path(os.getenv(\"DATA_DIR\", str(BASE_DIR / \"data\"))).resolve()\nJSON_DIR = DATA_DIR / \"json\"\nPROGRESS_DIR = JSON_DIR / \"progress\"\nRESPONSES_DIR = JSON_DIR / \"responses\"",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "DATA_DIR",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "DATA_DIR = Path(os.getenv(\"DATA_DIR\", str(BASE_DIR / \"data\"))).resolve()\nJSON_DIR = DATA_DIR / \"json\"\nPROGRESS_DIR = JSON_DIR / \"progress\"\nRESPONSES_DIR = JSON_DIR / \"responses\"\nEXPORTS_DIR = DATA_DIR / \"exports\"\nfor path in [DATA_DIR, JSON_DIR, PROGRESS_DIR, RESPONSES_DIR, EXPORTS_DIR]:\n    path.mkdir(parents=True, exist_ok=True)\nAPP_TITLE = \"AIFU Survey Bot\"\nDEFAULT_LANG = \"uz\"\nSUPPORTED_LANGS = (\"uz\", \"ru\")",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "JSON_DIR",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "JSON_DIR = DATA_DIR / \"json\"\nPROGRESS_DIR = JSON_DIR / \"progress\"\nRESPONSES_DIR = JSON_DIR / \"responses\"\nEXPORTS_DIR = DATA_DIR / \"exports\"\nfor path in [DATA_DIR, JSON_DIR, PROGRESS_DIR, RESPONSES_DIR, EXPORTS_DIR]:\n    path.mkdir(parents=True, exist_ok=True)\nAPP_TITLE = \"AIFU Survey Bot\"\nDEFAULT_LANG = \"uz\"\nSUPPORTED_LANGS = (\"uz\", \"ru\")\nI18N = {",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "PROGRESS_DIR",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "PROGRESS_DIR = JSON_DIR / \"progress\"\nRESPONSES_DIR = JSON_DIR / \"responses\"\nEXPORTS_DIR = DATA_DIR / \"exports\"\nfor path in [DATA_DIR, JSON_DIR, PROGRESS_DIR, RESPONSES_DIR, EXPORTS_DIR]:\n    path.mkdir(parents=True, exist_ok=True)\nAPP_TITLE = \"AIFU Survey Bot\"\nDEFAULT_LANG = \"uz\"\nSUPPORTED_LANGS = (\"uz\", \"ru\")\nI18N = {\n    \"uz\": {",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "RESPONSES_DIR",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "RESPONSES_DIR = JSON_DIR / \"responses\"\nEXPORTS_DIR = DATA_DIR / \"exports\"\nfor path in [DATA_DIR, JSON_DIR, PROGRESS_DIR, RESPONSES_DIR, EXPORTS_DIR]:\n    path.mkdir(parents=True, exist_ok=True)\nAPP_TITLE = \"AIFU Survey Bot\"\nDEFAULT_LANG = \"uz\"\nSUPPORTED_LANGS = (\"uz\", \"ru\")\nI18N = {\n    \"uz\": {\n        \"lang_name\": \"🇺🇿 O'zbekcha\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "EXPORTS_DIR",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "EXPORTS_DIR = DATA_DIR / \"exports\"\nfor path in [DATA_DIR, JSON_DIR, PROGRESS_DIR, RESPONSES_DIR, EXPORTS_DIR]:\n    path.mkdir(parents=True, exist_ok=True)\nAPP_TITLE = \"AIFU Survey Bot\"\nDEFAULT_LANG = \"uz\"\nSUPPORTED_LANGS = (\"uz\", \"ru\")\nI18N = {\n    \"uz\": {\n        \"lang_name\": \"🇺🇿 O'zbekcha\",\n        \"welcome\": \"<b>{app_title}</b>\\n\\nTilni tanlang.\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "APP_TITLE",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "APP_TITLE = \"AIFU Survey Bot\"\nDEFAULT_LANG = \"uz\"\nSUPPORTED_LANGS = (\"uz\", \"ru\")\nI18N = {\n    \"uz\": {\n        \"lang_name\": \"🇺🇿 O'zbekcha\",\n        \"welcome\": \"<b>{app_title}</b>\\n\\nTilni tanlang.\",\n        \"menu_title\": \"<b>{app_title}</b>\\n\\nKerakli so'rovnoma turini tanlang.{extra}\",\n        \"continue_hint\": \"\\n\\nSizda tugallanmagan so'rovnoma bor. Davom ettirish uchun /continue ni bosing.\",\n        \"block_label\": \"blok\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_LANG",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "DEFAULT_LANG = \"uz\"\nSUPPORTED_LANGS = (\"uz\", \"ru\")\nI18N = {\n    \"uz\": {\n        \"lang_name\": \"🇺🇿 O'zbekcha\",\n        \"welcome\": \"<b>{app_title}</b>\\n\\nTilni tanlang.\",\n        \"menu_title\": \"<b>{app_title}</b>\\n\\nKerakli so'rovnoma turini tanlang.{extra}\",\n        \"continue_hint\": \"\\n\\nSizda tugallanmagan so'rovnoma bor. Davom ettirish uchun /continue ni bosing.\",\n        \"block_label\": \"blok\",\n        \"question_label\": \"Savol\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "SUPPORTED_LANGS",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "SUPPORTED_LANGS = (\"uz\", \"ru\")\nI18N = {\n    \"uz\": {\n        \"lang_name\": \"🇺🇿 O'zbekcha\",\n        \"welcome\": \"<b>{app_title}</b>\\n\\nTilni tanlang.\",\n        \"menu_title\": \"<b>{app_title}</b>\\n\\nKerakli so'rovnoma turini tanlang.{extra}\",\n        \"continue_hint\": \"\\n\\nSizda tugallanmagan so'rovnoma bor. Davom ettirish uchun /continue ni bosing.\",\n        \"block_label\": \"blok\",\n        \"question_label\": \"Savol\",\n        \"multi_help\": \"Bir nechta variant tanlashingiz mumkin. Tanlab bo'lgach <b>✅ Tayyor</b> ni bosing.\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "I18N",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "I18N = {\n    \"uz\": {\n        \"lang_name\": \"🇺🇿 O'zbekcha\",\n        \"welcome\": \"<b>{app_title}</b>\\n\\nTilni tanlang.\",\n        \"menu_title\": \"<b>{app_title}</b>\\n\\nKerakli so'rovnoma turini tanlang.{extra}\",\n        \"continue_hint\": \"\\n\\nSizda tugallanmagan so'rovnoma bor. Davom ettirish uchun /continue ni bosing.\",\n        \"block_label\": \"blok\",\n        \"question_label\": \"Savol\",\n        \"multi_help\": \"Bir nechta variant tanlashingiz mumkin. Tanlab bo'lgach <b>✅ Tayyor</b> ni bosing.\",\n        \"text_help\": \"Javobni matn ko'rinishida yuboring.\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "export_results",
+        "description": "export_results",
+        "peekOfCode": "def main():\n    surveys = load_questionnaire(QUESTIONNAIRE_XLSX)\n    repo = JsonRepository(PROGRESS_DIR, RESPONSES_DIR)\n    response_files = repo.list_response_files()\n    timestamp = datetime.now().strftime(\"%Y%m%d_%H%M%S\")\n    output_path = EXPORTS_DIR / f\"responses_export_{timestamp}.xlsx\"\n    export_responses_to_excel(response_files, surveys, output_path)\n    print(output_path)\nif __name__ == \"__main__\":\n    main()",
+        "detail": "export_results",
+        "documentation": {}
+    },
+    {
+        "label": "export_responses_to_excel",
+        "kind": 2,
+        "importPath": "exporter",
+        "description": "exporter",
+        "peekOfCode": "def export_responses_to_excel(response_files: List[Path], surveys: Dict[str, Survey], output_path: Path) -> Path:\n    responses = [json.loads(path.read_text(encoding=\"utf-8\")) for path in response_files]\n    wb = Workbook()\n    ws = wb.active\n    ws.title = \"summary\"\n    ws.append([\"survey_code\", \"survey_title_uz\", \"survey_title_ru\", \"responses_count\"])\n    _set_header_style(ws)\n    counts = {}\n    for response in responses:\n        code = response.get(\"survey_code\", \"\")",
+        "detail": "exporter",
+        "documentation": {}
+    },
+    {
+        "label": "HEADER_FILL",
+        "kind": 5,
+        "importPath": "exporter",
+        "description": "exporter",
+        "peekOfCode": "HEADER_FILL = PatternFill(\"solid\", fgColor=\"1F4E78\")\ndef _set_header_style(ws):\n    for cell in ws[1]:\n        cell.font = Font(bold=True, color=\"FFFFFF\")\n        cell.fill = HEADER_FILL\n        cell.alignment = Alignment(horizontal=\"center\", vertical=\"center\", wrap_text=True)\ndef _set_widths(ws, widths):\n    for col, width in widths.items():\n        ws.column_dimensions[get_column_letter(col)].width = width\ndef export_responses_to_excel(response_files: List[Path], surveys: Dict[str, Survey], output_path: Path) -> Path:",
+        "detail": "exporter",
+        "documentation": {}
+    },
+    {
+        "label": "language_keyboard",
+        "kind": 2,
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "peekOfCode": "def language_keyboard():\n    keyboard = InlineKeyboardMarkup(row_width=2)\n    for lang in SUPPORTED_LANGS:\n        keyboard.insert(\n            InlineKeyboardButton(\n                text=I18N[lang][\"lang_name\"],\n                callback_data=f\"lang:{lang}\",\n            )\n        )\n    return keyboard",
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "survey_keyboard",
+        "kind": 2,
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "peekOfCode": "def survey_keyboard(surveys, lang: str):\n    keyboard = InlineKeyboardMarkup(row_width=1)\n    for survey in surveys:\n        keyboard.add(\n            InlineKeyboardButton(\n                text=f\"📋 {survey.get_title(lang)}\",\n                callback_data=f\"sv:{survey.survey_code}\",\n            )\n        )\n    return keyboard",
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "single_choice_keyboard",
+        "kind": 2,
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "peekOfCode": "def single_choice_keyboard(question, lang: str):\n    keyboard = InlineKeyboardMarkup(row_width=2)\n    for idx, option in enumerate(question.options):\n        keyboard.insert(\n            InlineKeyboardButton(\n                text=option.get_label(lang),\n                callback_data=f\"sc:{idx}\",\n            )\n        )\n    if question.allow_skip:",
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "multi_choice_keyboard",
+        "kind": 2,
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "peekOfCode": "def multi_choice_keyboard(question, selected_indexes, lang: str):\n    selected_indexes = set(selected_indexes or [])\n    keyboard = InlineKeyboardMarkup(row_width=2)\n    for idx, option in enumerate(question.options):\n        mark = \"✅ \" if idx in selected_indexes else \"\"\n        keyboard.insert(\n            InlineKeyboardButton(\n                text=f\"{mark}{option.get_label(lang)}\",\n                callback_data=f\"mt:{idx}\",\n            )",
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "text_answer_keyboard",
+        "kind": 2,
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "peekOfCode": "def text_answer_keyboard(lang: str):\n    keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)\n    keyboard.add(KeyboardButton(I18N[lang][\"skip_text\"]))\n    return keyboard\ndef remove_keyboard():\n    return ReplyKeyboardRemove()",
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "remove_keyboard",
+        "kind": 2,
+        "importPath": "keyboards",
+        "description": "keyboards",
+        "peekOfCode": "def remove_keyboard():\n    return ReplyKeyboardRemove()",
+        "detail": "keyboards",
+        "documentation": {}
+    },
+    {
+        "label": "Option",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class Option:\n    value: str\n    order: int\n    labels: Dict[str, str] = field(default_factory=dict)\n    def get_label(self, lang: str) -> str:\n        return self.labels.get(lang) or self.labels.get(\"uz\") or self.labels.get(\"ru\") or self.value\n@dataclass\nclass Question:\n    survey_code: str\n    block_code: str",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Question",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class Question:\n    survey_code: str\n    block_code: str\n    question_code: str\n    question_order: int\n    question_order_in_block: int\n    block_total_questions: int\n    question_type: str\n    required: bool\n    allow_skip: bool",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Block",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class Block:\n    survey_code: str\n    block_code: str\n    roman_no: str\n    order_no: int\n    titles: Dict[str, str] = field(default_factory=dict)\n    intros: Dict[str, str] = field(default_factory=dict)\n    def get_title(self, lang: str) -> str:\n        return self.titles.get(lang) or self.titles.get(\"uz\") or self.titles.get(\"ru\") or self.block_code\n    def get_intro(self, lang: str) -> str:",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Survey",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class Survey:\n    survey_code: str\n    order_no: int\n    is_active: bool\n    titles: Dict[str, str] = field(default_factory=dict)\n    audiences: Dict[str, str] = field(default_factory=dict)\n    descriptions: Dict[str, str] = field(default_factory=dict)\n    blocks: Dict[str, Block] = field(default_factory=dict)\n    questions: List[Question] = field(default_factory=list)\n    def get_title(self, lang: str) -> str:",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "SurveyStates",
+        "kind": 6,
+        "importPath": "states",
+        "description": "states",
+        "peekOfCode": "class SurveyStates(StatesGroup):\n    answering = State()",
+        "detail": "states",
+        "documentation": {}
+    },
+    {
+        "label": "JsonRepository",
+        "kind": 6,
+        "importPath": "storage",
+        "description": "storage",
+        "peekOfCode": "class JsonRepository:\n    def __init__(self, progress_dir: Path, responses_dir: Path):\n        self.progress_dir = progress_dir\n        self.responses_dir = responses_dir\n        self.progress_dir.mkdir(parents=True, exist_ok=True)\n        self.responses_dir.mkdir(parents=True, exist_ok=True)\n    def _progress_path(self, user_id: int) -> Path:\n        return self.progress_dir / f\"{user_id}.json\"\n    def save_progress(self, user_id: int, payload: Dict[str, Any]) -> Path:\n        path = self._progress_path(user_id)",
+        "detail": "storage",
+        "documentation": {}
+    },
+    {
+        "label": "load_questionnaire",
+        "kind": 2,
+        "importPath": "survey_loader",
+        "description": "survey_loader",
+        "peekOfCode": "def load_questionnaire(xlsx_path: Path) -> Dict[str, Survey]:\n    workbook = load_workbook(xlsx_path, data_only=True)\n    surveys_sheet = workbook[\"surveys\"]\n    blocks_sheet = workbook[\"blocks\"]\n    questions_sheet = workbook[\"questions\"]\n    options_sheet = workbook[\"options\"]\n    surveys: Dict[str, Survey] = {}\n    headers = _normalize_headers(surveys_sheet)\n    for row in surveys_sheet.iter_rows(min_row=2, values_only=True):\n        data = _row_to_dict(headers, row)",
+        "detail": "survey_loader",
+        "documentation": {}
+    },
+    {
+        "label": "LANGS",
+        "kind": 5,
+        "importPath": "survey_loader",
+        "description": "survey_loader",
+        "peekOfCode": "LANGS = (\"uz\", \"ru\")\ndef _to_bool(value) -> bool:\n    if isinstance(value, bool):\n        return value\n    return str(value).strip().lower() in {\"1\", \"true\", \"yes\", \"ha\"}\ndef _normalize_headers(ws) -> List[str]:\n    return [str(cell.value).strip() if cell.value is not None else \"\" for cell in ws[1]]\ndef _row_to_dict(headers, row):\n    data = {}\n    for idx, header in enumerate(headers):",
+        "detail": "survey_loader",
+        "documentation": {}
+    }
+]
