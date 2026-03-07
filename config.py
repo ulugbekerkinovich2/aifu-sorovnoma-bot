@@ -28,7 +28,7 @@ EXPORTS_DIR = DATA_DIR / "exports"
 for path in [DATA_DIR, JSON_DIR, PROGRESS_DIR, RESPONSES_DIR, EXPORTS_DIR]:
     path.mkdir(parents=True, exist_ok=True)
 
-APP_TITLE = "AIFU Survey Bot"
+APP_TITLE = "AIFU So'rovnoma Botiga xush kelibsiz!"
 DEFAULT_LANG = "uz"
 SUPPORTED_LANGS = ("uz", "ru")
 
