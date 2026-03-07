@@ -29,8 +29,8 @@ def export_responses_to_excel(response_files: List[Path], surveys: Dict[str, Sur
 
     wb = Workbook()
     ws = wb.active
-    ws.title = "summary"
-    ws.append(["survey_code", "survey_title_uz", "survey_title_ru", "responses_count"])
+    ws.title = "Umumiy"
+    ws.append(["So'rovnoma kodi", "So'rovnoma nomi (UZ)", "So'rovnoma nomi (RU)", "Javoblar soni"])
     _set_header_style(ws)
 
     counts = {}
@@ -41,13 +41,13 @@ def export_responses_to_excel(response_files: List[Path], surveys: Dict[str, Sur
     for survey in surveys.values():
         ws.append([survey.survey_code, survey.get_title("uz"), survey.get_title("ru"), counts.get(survey.survey_code, 0)])
     ws.append([])
-    ws.append(["created_at", datetime.now().isoformat(timespec="seconds")])
+    ws.append(["Yaratilgan vaqt", datetime.now().strftime("%Y-%m-%d %H:%M")])
     _set_widths(ws, {1: 18, 2: 28, 3: 28, 4: 18})
 
     meta_headers = [
-        "response_id", "session_id", "lang", "survey_code", "survey_title",
-        "telegram_user_id", "telegram_username", "telegram_first_name", "telegram_last_name",
-        "started_at", "finished_at"
+        "ID", "Til", "So'rovnoma kodi", "So'rovnoma nomi",
+        "Telegram ID", "Username", "Ism", "Familiya",
+        "Boshlangan vaqt", "Tugatilgan vaqt"
     ]
     question_order = []
     question_text_map = {}
@@ -58,12 +58,15 @@ def export_responses_to_excel(response_files: List[Path], surveys: Dict[str, Sur
             question_text_map[question.question_code] = {"uz": question.get_text("uz"), "ru": question.get_text("ru")}
             question_type_map[question.question_code] = question.question_type
 
-    ws = wb.create_sheet("raw_wide")
-    ws.append(meta_headers + question_order)
+    q_display_headers = [question_text_map[c]["uz"] or c for c in question_order]
+
+    ws = wb.create_sheet("Barcha javoblar")
+    ws.append(meta_headers + q_display_headers)
     _set_header_style(ws)
     for response in responses:
+        lang = response.get("lang", "uz")
         row = [
-            response.get("response_id"), response.get("session_id"), response.get("lang", "uz"),
+            response.get("response_id"), "O'zbek" if lang == "uz" else "Русский",
             response.get("survey_code"), response.get("survey_title"),
             response.get("user", {}).get("telegram_user_id"), response.get("user", {}).get("username"),
             response.get("user", {}).get("first_name"), response.get("user", {}).get("last_name"),
@@ -73,13 +76,13 @@ def export_responses_to_excel(response_files: List[Path], surveys: Dict[str, Sur
         for question_code in question_order:
             row.append(answers.get(question_code, {}).get("answer_text", ""))
         ws.append(row)
-    _set_widths(ws, {1: 22, 2: 22, 3: 10, 4: 18, 5: 28, 6: 18, 7: 20, 8: 18, 9: 18, 10: 22, 11: 22})
+    _set_widths(ws, {1: 22, 2: 12, 3: 18, 4: 28, 5: 16, 6: 20, 7: 18, 8: 18, 9: 22, 10: 22})
 
-    ws = wb.create_sheet("answers_long")
+    ws = wb.create_sheet("Savollar bo'yicha")
     ws.append([
-        "response_id", "lang", "survey_code", "question_code",
-        "question_text_uz", "question_text_ru", "question_type", "is_skipped",
-        "answer_value", "answer_text", "answered_at"
+        "ID", "Til", "So'rovnoma kodi", "Savol kodi",
+        "Savol matni (UZ)", "Savol matni (RU)", "Savol turi", "O'tkazib yuborildi",
+        "Javob qiymati", "Javob matni", "Javob vaqti"
     ])
     _set_header_style(ws)
     for response in responses:
@@ -91,13 +94,14 @@ def export_responses_to_excel(response_files: List[Path], surveys: Dict[str, Sur
                 response.get("response_id"), response.get("lang", "uz"), response.get("survey_code"),
                 question_code, question_text_map.get(question_code, {}).get("uz", ""),
                 question_text_map.get(question_code, {}).get("ru", ""),
-                question_type_map.get(question_code, ""), answer.get("skipped", False),
+                question_type_map.get(question_code, ""),
+                "Ha" if answer.get("skipped", False) else "Yo'q",
                 value, answer.get("answer_text", ""), answer.get("answered_at", "")
             ])
     _set_widths(ws, {1: 22, 2: 10, 3: 18, 4: 18, 5: 55, 6: 55, 7: 16, 8: 12, 9: 25, 10: 45, 11: 22})
 
-    ws = wb.create_sheet("questions_ref")
-    ws.append(["survey_code", "question_code", "question_order", "question_type", "question_text_uz", "question_text_ru"])
+    ws = wb.create_sheet("Savollar ro'yxati")
+    ws.append(["So'rovnoma kodi", "Savol kodi", "Tartib raqami", "Savol turi", "Savol matni (UZ)", "Savol matni (RU)"])
     _set_header_style(ws)
     for survey in surveys.values():
         for question in survey.questions:
