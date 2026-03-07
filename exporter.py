@@ -116,57 +116,18 @@ def export_responses_to_excel(response_files: List[Path], surveys: Dict[str, Sur
     return output_path
 
 
-_RESPONSE_META_HEADERS = [
-    "№", "Til", "Boshlangan vaqt", "Tugatilgan vaqt",
-    "Telegram ID", "Username", "Ism-familiya",
-]
-
-_META_COL_WIDTHS = {
-    "№": 5,
-    "Til": 12,
-    "Boshlangan vaqt": 20,
-    "Tugatilgan vaqt": 20,
-    "Telegram ID": 16,
-    "Username": 20,
-    "Ism-familiya": 26,
-}
-
-ROW_FILL_ODD = PatternFill("solid", fgColor="F2F7FF")
+_RESPONSE_META_HEADERS = ["№", "Sana", "Til", "So'rovnoma", "Ism-familiya"]
+_META_COL_WIDTHS = [5, 18, 10, 18, 24]
 
 
-def _make_response_sheet(wb: Workbook, survey: Survey) -> object:
-    """Create a new professional sheet for a survey with human-readable headers."""
-    title = survey.get_title("uz")[:31]
-    ws = wb.create_sheet(title)
-
-    q_headers = [q.get_text("uz") or q.question_code for q in survey.questions]
-    all_headers = _RESPONSE_META_HEADERS + q_headers
-    ws.append(all_headers)
-
-    # Header style
-    for cell in ws[1]:
-        cell.font = Font(bold=True, color="FFFFFF", size=11)
-        cell.fill = HEADER_FILL
-        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
-
-    # Column widths
-    for i, h in enumerate(_RESPONSE_META_HEADERS, 1):
-        ws.column_dimensions[get_column_letter(i)].width = _META_COL_WIDTHS.get(h, 15)
-    for i in range(len(_RESPONSE_META_HEADERS) + 1, len(all_headers) + 1):
-        ws.column_dimensions[get_column_letter(i)].width = 35
-
-    # Header row height for long question texts
-    ws.row_dimensions[1].height = 60
-
-    # Freeze header + auto-filter
-    ws.freeze_panes = "A2"
-    ws.auto_filter.ref = f"A1:{get_column_letter(len(all_headers))}1"
-
-    return ws
+def _style_header_cell(cell):
+    cell.font = Font(bold=True, color="FFFFFF", size=10)
+    cell.fill = HEADER_FILL
+    cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
 
 
 def append_response_to_excel(payload: dict, surveys_dict: Dict[str, Survey], output_path: Path):
-    """Append one completed response as a new row in a per-survey sheet."""
+    """Append one completed response to a single shared sheet."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     survey_code = payload.get("survey_code", "")
@@ -176,41 +137,50 @@ def append_response_to_excel(payload: dict, surveys_dict: Dict[str, Survey], out
 
     if output_path.exists():
         wb = load_workbook(output_path)
+        ws = wb.active
     else:
         wb = Workbook()
-        if "Sheet" in wb.sheetnames:
-            del wb["Sheet"]
+        ws = wb.active
+        ws.title = "Javoblar"
+        for col, (h, w) in enumerate(zip(_RESPONSE_META_HEADERS, _META_COL_WIDTHS), 1):
+            cell = ws.cell(1, col, h)
+            _style_header_cell(cell)
+            ws.column_dimensions[get_column_letter(col)].width = w
+        ws.row_dimensions[1].height = 40
+        ws.freeze_panes = "A2"
 
-    sheet_title = survey.get_title("uz")[:31]
-    if sheet_title in wb.sheetnames:
-        ws = wb[sheet_title]
-    else:
-        ws = _make_response_sheet(wb, survey)
+    # Read existing header row to know which columns already exist
+    max_col = ws.max_column
+    existing_headers = {ws.cell(1, c).value: c for c in range(1, max_col + 1)}
 
-    row_num = ws.max_row  # header = row 1, so first data row gets №=1
+    # Ensure question columns exist (add new ones if needed)
+    for q in survey.questions:
+        q_text = q.get_text("uz") or q.question_code
+        if q_text not in existing_headers:
+            max_col += 1
+            cell = ws.cell(1, max_col, q_text)
+            _style_header_cell(cell)
+            ws.column_dimensions[get_column_letter(max_col)].width = 30
+            existing_headers[q_text] = max_col
+
+    # Update auto-filter to cover all columns
+    ws.auto_filter.ref = f"A1:{get_column_letter(max_col)}1"
+
+    # Write data row
+    data_row = ws.max_row + 1
     user = payload.get("user", {})
     answers = payload.get("answers", {})
-    lang_display = "O'zbek" if payload.get("lang") == "uz" else "Русский"
 
-    row = [
-        row_num,
-        lang_display,
-        payload.get("started_at", ""),
-        payload.get("finished_at", ""),
-        str(user.get("telegram_user_id", "")),
-        user.get("username", ""),
-        user.get("full_name", ""),
-    ]
+    ws.cell(data_row, 1, data_row - 1)
+    ws.cell(data_row, 2, payload.get("finished_at", "")[:16].replace("T", " "))
+    ws.cell(data_row, 3, "O'z" if payload.get("lang") == "uz" else "Рус")
+    ws.cell(data_row, 4, survey.get_title("uz"))
+    ws.cell(data_row, 5, user.get("full_name", ""))
+
     for q in survey.questions:
         ans = answers.get(q.question_code, {})
-        row.append("" if ans.get("skipped") else ans.get("answer_text", ""))
-
-    ws.append(row)
-
-    # Alternate row shading
-    data_row = ws.max_row
-    if data_row % 2 == 0:
-        for cell in ws[data_row]:
-            cell.fill = ROW_FILL_ODD
+        val = "" if ans.get("skipped") else ans.get("answer_text", "")
+        q_text = q.get_text("uz") or q.question_code
+        ws.cell(data_row, existing_headers[q_text], val)
 
     wb.save(output_path)
