@@ -9,8 +9,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.utils import executor
 
 from config import ADMIN_IDS, APP_TITLE, BOT_TOKEN, DEFAULT_LANG, EXPORTS_DIR, I18N, PROGRESS_DIR, QUESTIONNAIRE_XLSX, RESPONSES_DIR
-from exporter import export_responses_to_excel
-from sheets import append_response, init_sheet
+from exporter import append_response_to_excel, export_responses_to_excel
 from keyboards import language_keyboard, multi_choice_keyboard, remove_keyboard, single_choice_keyboard, survey_keyboard
 from states import SurveyStates
 from storage import JsonRepository
@@ -26,7 +25,6 @@ dp = Dispatcher(bot, storage=MemoryStorage())
 
 surveys = load_questionnaire(QUESTIONNAIRE_XLSX)
 repo = JsonRepository(PROGRESS_DIR, RESPONSES_DIR)
-init_sheet(surveys)
 
 
 def now_iso() -> str:
@@ -177,7 +175,7 @@ async def save_answer_and_advance(state: FSMContext, answer_value=None, answer_t
             "answers": session["answers"],
         }
         response_path = repo.save_response(payload)
-        append_response(payload)
+        append_response_to_excel(payload, surveys, EXPORTS_DIR / "responses.xlsx")
         repo.clear_progress(session["user"]["telegram_user_id"])
         await state.finish()
         await state.update_data(lang=lang)

@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Dict, List
 import json
 
-from openpyxl import Workbook
+from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
@@ -114,3 +114,51 @@ def export_responses_to_excel(response_files: List[Path], surveys: Dict[str, Sur
     output_path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(output_path)
     return output_path
+
+
+_META_HEADERS = [
+    "response_id", "lang", "survey_code", "survey_title",
+    "started_at", "finished_at",
+    "telegram_user_id", "username", "full_name",
+]
+
+
+def append_response_to_excel(payload: dict, surveys_dict: Dict[str, Survey], output_path: Path):
+    """Append one completed response as a new row in a persistent Excel file."""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    question_codes = [
+        q.question_code
+        for survey in surveys_dict.values()
+        for q in survey.questions
+    ]
+
+    if output_path.exists():
+        wb = load_workbook(output_path)
+        ws = wb.active
+    else:
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "responses"
+        ws.append(_META_HEADERS + question_codes)
+        _set_header_style(ws)
+
+    user = payload.get("user", {})
+    answers = payload.get("answers", {})
+    row = [
+        payload.get("response_id", ""),
+        payload.get("lang", ""),
+        payload.get("survey_code", ""),
+        payload.get("survey_title", ""),
+        payload.get("started_at", ""),
+        payload.get("finished_at", ""),
+        str(user.get("telegram_user_id", "")),
+        user.get("username", ""),
+        user.get("full_name", ""),
+    ]
+    for code in question_codes:
+        ans = answers.get(code, {})
+        row.append("" if ans.get("skipped") else ans.get("answer_text", ""))
+
+    ws.append(row)
+    wb.save(output_path)
