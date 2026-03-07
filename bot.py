@@ -10,7 +10,8 @@ from aiogram.utils import executor
 
 from config import ADMIN_IDS, APP_TITLE, BOT_TOKEN, DEFAULT_LANG, EXPORTS_DIR, I18N, PROGRESS_DIR, QUESTIONNAIRE_XLSX, RESPONSES_DIR
 from exporter import export_responses_to_excel
-from keyboards import language_keyboard, multi_choice_keyboard, remove_keyboard, single_choice_keyboard, survey_keyboard, text_answer_keyboard
+from sheets import append_response, init_sheet
+from keyboards import language_keyboard, multi_choice_keyboard, remove_keyboard, single_choice_keyboard, survey_keyboard
 from states import SurveyStates
 from storage import JsonRepository
 from survey_loader import load_questionnaire
@@ -25,6 +26,7 @@ dp = Dispatcher(bot, storage=MemoryStorage())
 
 surveys = load_questionnaire(QUESTIONNAIRE_XLSX)
 repo = JsonRepository(PROGRESS_DIR, RESPONSES_DIR)
+init_sheet(surveys)
 
 
 def now_iso() -> str:
@@ -69,15 +71,13 @@ def build_question_text(session):
     lang = session.get("lang", DEFAULT_LANG)
     survey = surveys[session["survey_code"]]
     question = get_current_question(session)
-    block = survey.blocks[question.block_code]
 
+    q_num = session["question_index"] + 1
+    q_total = len(survey.questions)
     lines = [
-        f"<b>{survey.get_title(lang)}</b>",
-        f"👥 {survey.get_audience(lang)}",
-        f"📚 {block.roman_no} {tr(lang, 'block_label')}: {block.get_title(lang)}",
-        f"❓ {tr(lang, 'question_label')} {session['question_index'] + 1}/{len(survey.questions)}",
+        f"<b>{q_num}/{q_total}</b>",
         "",
-        question.get_text(lang),
+        f"<b>{question.get_text(lang)}</b>",
     ]
     help_text = question.get_help_text(lang)
     if help_text:
@@ -88,8 +88,6 @@ def build_question_text(session):
     elif question.question_type in {"long_text", "integer", "phone", "text"}:
         lines += ["", tr(lang, "text_help")]
 
-    if question.allow_skip:
-        lines += ["", tr(lang, "skip_help", skip_text=tr(lang, "skip_text"))]
     return "\n".join(lines)
 
 
@@ -114,15 +112,26 @@ async def show_current_question(target, state: FSMContext):
     session = data.get("session")
     if not session:
         return
+
+    prev_msg_id = session.get("last_question_message_id")
+    if prev_msg_id:
+        try:
+            await bot.delete_message(target, prev_msg_id)
+        except Exception:
+            pass
+
     lang = session.get("lang", DEFAULT_LANG)
     question = get_current_question(session)
     text = build_question_text(session)
     if question.question_type == "single_choice":
-        await bot.send_message(target, text, reply_markup=single_choice_keyboard(question, lang))
+        msg = await bot.send_message(target, text, reply_markup=single_choice_keyboard(question, lang))
     elif question.question_type == "multi_choice":
-        await bot.send_message(target, text, reply_markup=multi_choice_keyboard(question, session.get("pending_multi", []), lang))
+        msg = await bot.send_message(target, text, reply_markup=multi_choice_keyboard(question, session.get("pending_multi", []), lang))
     else:
-        await bot.send_message(target, text, reply_markup=text_answer_keyboard(lang))
+        msg = await bot.send_message(target, text, reply_markup=remove_keyboard())
+
+    session["last_question_message_id"] = msg.message_id
+    await save_session(state, session)
 
 
 async def save_session(state: FSMContext, session):
@@ -168,6 +177,7 @@ async def save_answer_and_advance(state: FSMContext, answer_value=None, answer_t
             "answers": session["answers"],
         }
         response_path = repo.save_response(payload)
+        append_response(payload)
         repo.clear_progress(session["user"]["telegram_user_id"])
         await state.finish()
         await state.update_data(lang=lang)
@@ -356,9 +366,6 @@ async def text_answer_handler(message: types.Message, state: FSMContext):
         await message.answer(tr(lang, "session_not_found"))
         return
     question = get_current_question(session)
-    if message.text == tr(lang, "skip_text"):
-        await save_answer_and_advance(state, answer_value=None, answer_text="", skipped=True)
-        return
     if question.question_type in {"single_choice", "multi_choice"}:
         await message.answer(tr(lang, "use_buttons"))
         return
@@ -366,6 +373,10 @@ async def text_answer_handler(message: types.Message, state: FSMContext):
     if not is_valid:
         await message.answer(error_message)
         return
+    try:
+        await message.delete()
+    except Exception:
+        pass
     await save_answer_and_advance(state, answer_value=message.text.strip(), answer_text=message.text.strip(), skipped=False)
 
 

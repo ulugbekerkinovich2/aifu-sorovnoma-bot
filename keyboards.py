@@ -1,4 +1,4 @@
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
 
 from config import I18N, SUPPORTED_LANGS
 
@@ -36,8 +36,6 @@ def single_choice_keyboard(question, lang: str):
                 callback_data=f"sc:{idx}",
             )
         )
-    if question.allow_skip:
-        keyboard.add(InlineKeyboardButton(text=I18N[lang]["skip_text"], callback_data="skip"))
     return keyboard
 
 
@@ -53,14 +51,6 @@ def multi_choice_keyboard(question, selected_indexes, lang: str):
             )
         )
     keyboard.row(InlineKeyboardButton(text=I18N[lang]["done_text"], callback_data="mdone"))
-    if question.allow_skip:
-        keyboard.row(InlineKeyboardButton(text=I18N[lang]["skip_text"], callback_data="skip"))
-    return keyboard
-
-
-def text_answer_keyboard(lang: str):
-    keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    keyboard.add(KeyboardButton(I18N[lang]["skip_text"]))
     return keyboard
 
 
