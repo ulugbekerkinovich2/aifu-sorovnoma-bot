@@ -54,5 +54,12 @@ def multi_choice_keyboard(question, selected_indexes, lang: str):
     return keyboard
 
 
+def tuman_keyboard(tumans: list) -> InlineKeyboardMarkup:
+    keyboard = InlineKeyboardMarkup(row_width=2)
+    for idx, tuman in enumerate(tumans):
+        keyboard.insert(InlineKeyboardButton(text=tuman, callback_data=f"tc:{idx}"))
+    return keyboard
+
+
 def remove_keyboard():
     return ReplyKeyboardRemove()

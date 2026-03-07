@@ -10,7 +10,8 @@ from aiogram.utils import executor
 
 from config import ADMIN_IDS, APP_TITLE, BOT_TOKEN, DEFAULT_LANG, EXPORTS_DIR, I18N, PROGRESS_DIR, QUESTIONNAIRE_XLSX, RESPONSES_DIR
 from exporter import append_response_to_excel, export_responses_to_excel
-from keyboards import language_keyboard, multi_choice_keyboard, remove_keyboard, single_choice_keyboard, survey_keyboard
+from keyboards import language_keyboard, multi_choice_keyboard, remove_keyboard, single_choice_keyboard, survey_keyboard, tuman_keyboard
+from locations import TUMANS
 from states import SurveyStates
 from storage import JsonRepository
 from survey_loader import load_questionnaire
@@ -63,6 +64,16 @@ async def get_user_lang(state: FSMContext, user_id: int) -> str:
 
 def get_current_question(session):
     return surveys[session["survey_code"]].questions[session["question_index"]]
+
+
+def _get_tuman_options(session, question):
+    """Return tuman list if this is a tuman question with a known viloyat, else None."""
+    if not question.question_code.endswith("_q005"):
+        return None
+    viloyat_code = question.question_code[:-4] + "q004"
+    viloyat_val = str(session.get("answers", {}).get(viloyat_code, {}).get("answer_value", ""))
+    tumans = TUMANS.get(viloyat_val)
+    return tumans if tumans else None
 
 
 def build_question_text(session):
@@ -121,7 +132,12 @@ async def show_current_question(target, state: FSMContext):
     lang = session.get("lang", DEFAULT_LANG)
     question = get_current_question(session)
     text = build_question_text(session)
-    if question.question_type == "single_choice":
+
+    tuman_options = _get_tuman_options(session, question)
+    if tuman_options is not None:
+        session["current_tuman_options"] = tuman_options
+        msg = await bot.send_message(target, text, reply_markup=tuman_keyboard(tuman_options))
+    elif question.question_type == "single_choice":
         msg = await bot.send_message(target, text, reply_markup=single_choice_keyboard(question, lang))
     elif question.question_type == "multi_choice":
         msg = await bot.send_message(target, text, reply_markup=multi_choice_keyboard(question, session.get("pending_multi", []), lang))
@@ -309,6 +325,21 @@ async def single_choice_selected(callback: types.CallbackQuery, state: FSMContex
     option = question.options[int(callback.data.split(":", 1)[1])]
     await callback.answer(tr(lang, "selected", label=option.get_label(lang)))
     await save_answer_and_advance(state, answer_value=option.value, answer_text=option.get_label(lang), skipped=False)
+
+
+@dp.callback_query_handler(lambda c: c.data.startswith("tc:"), state=SurveyStates.answering)
+async def tuman_selected(callback: types.CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+    session = data["session"]
+    lang = session.get("lang", DEFAULT_LANG)
+    idx = int(callback.data.split(":", 1)[1])
+    tumans = session.get("current_tuman_options", [])
+    if idx >= len(tumans):
+        await callback.answer()
+        return
+    tuman_name = tumans[idx]
+    await callback.answer(tr(lang, "selected", label=tuman_name))
+    await save_answer_and_advance(state, answer_value=tuman_name, answer_text=tuman_name, skipped=False)
 
 
 @dp.callback_query_handler(lambda c: c.data.startswith("mt:"), state=SurveyStates.answering)
