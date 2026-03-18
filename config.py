@@ -15,7 +15,7 @@ ADMIN_IDS = {
 QUESTIONNAIRE_XLSX = Path(
     os.getenv(
         "QUESTIONNAIRE_XLSX",
-        str(BASE_DIR / "questionnaire" / "aifu_questionnaire_config.xlsx"),
+        str(BASE_DIR / "questionnaire" / "aifu_questionnaire_config_bilingual_full.xlsx"),
     )
 ).resolve()
 

@@ -22,7 +22,7 @@ bot tayyor loyihasi.
 ## Muhim fayllar
 - `bot.py` - asosiy bot
 - `survey_loader.py` - Excel'dan 2 tilli savollarni o'qiydi
-- `questionnaire/aifu_questionnaire_config.xlsx` - 2 tilli savollar Exceldagi baza
+- `questionnaire/aifu_questionnaire_config_bilingual_full.xlsx` - 2 tilli savollar Exceldagi baza
 - `exporter.py` - JSON natijalarni Excel'ga chiqaradi
 - `pm2.config.js` - PM2 uchun config
 

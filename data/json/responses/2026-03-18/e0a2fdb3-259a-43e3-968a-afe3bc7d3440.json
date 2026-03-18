@@ -1,0 +1,341 @@
+{
+  "response_id": "e0a2fdb3-259a-43e3-968a-afe3bc7d3440",
+  "session_id": "af255d8a-f835-456a-b5c7-9f491da406e8",
+  "lang": "uz",
+  "survey_code": "student",
+  "survey_title": "TALABALAR SOROVNOMASI (Bakalavr va Magistr)",
+  "survey_title_uz": "TALABALAR SOROVNOMASI (Bakalavr va Magistr)",
+  "survey_title_ru": "АНКЕТА ДЛЯ СТУДЕНТОВ (Бакалавр и Магистр)",
+  "started_at": "2026-03-18T14:09:12",
+  "finished_at": "2026-03-18T14:11:01",
+  "user": {
+    "telegram_user_id": 935920479,
+    "username": "status_developer",
+    "first_name": "ulug'bek erkinov",
+    "last_name": "",
+    "full_name": "ulug'bek erkinov"
+  },
+  "answers": {
+    "student_q001": {
+      "question_text": "Yoshingizni yozing.",
+      "question_text_uz": "Yoshingizni yozing.",
+      "question_text_ru": "Укажите ваш возраст.",
+      "question_type": "integer",
+      "answer_value": "12",
+      "answer_text": "12",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:17"
+    },
+    "student_q002": {
+      "question_text": "Jinsingizni tanlang.",
+      "question_text_uz": "Jinsingizni tanlang.",
+      "question_text_ru": "Выберите ваш пол.",
+      "question_type": "single_choice",
+      "answer_value": "1",
+      "answer_text": "Erkak",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:21"
+    },
+    "student_q003": {
+      "question_text": "Qaysi viloyatdansiz?",
+      "question_text_uz": "Qaysi viloyatdansiz?",
+      "question_text_ru": "Из какой вы области?",
+      "question_type": "single_choice",
+      "answer_value": "1",
+      "answer_text": "Toshkent shahri",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:24"
+    },
+    "student_q004": {
+      "question_text": "Tumaningizni yozing.",
+      "question_text_uz": "Tumaningizni yozing.",
+      "question_text_ru": "Укажите ваш район.",
+      "question_type": "text",
+      "answer_value": "Yunusobod",
+      "answer_text": "Yunusobod",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:35"
+    },
+    "student_q005": {
+      "question_text": "Oylik daromadingiz qaysi oraliqda?",
+      "question_text_uz": "Oylik daromadingiz qaysi oraliqda?",
+      "question_text_ru": "В каком диапазоне находится ваш ежемесячный доход?",
+      "question_type": "single_choice",
+      "answer_value": "4",
+      "answer_text": "10 000 000 — 20 000 000 so'm",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:37"
+    },
+    "student_q006": {
+      "question_text": "Eng ko'p vaqtingizni qaysi axborot manbasiga sarflaysiz?",
+      "question_text_uz": "Eng ko'p vaqtingizni qaysi axborot manbasiga sarflaysiz?",
+      "question_text_ru": "На какой источник информации вы тратите больше всего времени?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "4",
+        "5"
+      ],
+      "answer_text": "Gazeta / Jurnal | Telegram",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:41"
+    },
+    "student_q007": {
+      "question_text": "Qaysi yangilik kanallarni kuzatasiz?",
+      "question_text_uz": "Qaysi yangilik kanallarni kuzatasiz?",
+      "question_text_ru": "Какие новостные каналы вы отслеживаете?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "1",
+        "3"
+      ],
+      "answer_text": "Kun.uz | Qalampir.uz",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:44"
+    },
+    "student_q008": {
+      "question_text": "Qaysi bloger yoki influenserlarni kuzatasiz?",
+      "question_text_uz": "Qaysi bloger yoki influenserlarni kuzatasiz?",
+      "question_text_ru": "За какими блогерами или инфлюенсерами вы следите?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "3",
+        "5"
+      ],
+      "answer_text": "Alisher Sa'dullayev | Abdukarim Mirzayev",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:49"
+    },
+    "student_q009": {
+      "question_text": "Qaysi telekanal yoki radiokanalni ko'proq ko'rasiz yoki eshitasiz?",
+      "question_text_uz": "Qaysi telekanal yoki radiokanalni ko'proq ko'rasiz yoki eshitasiz?",
+      "question_text_ru": "Какой телеканал или радиоканал вы смотрите или слушаете чаще всего?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "7"
+      ],
+      "answer_text": "O'zbekiston",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:54"
+    },
+    "student_q010": {
+      "question_text": "Telegramda eng ko'p kuzatadigan TOP 5 ta kanalingizni yozing.",
+      "question_text_uz": "Telegramda eng ko'p kuzatadigan TOP 5 ta kanalingizni yozing.",
+      "question_text_ru": "Напишите ТОП-5 каналов, которые вы чаще всего просматриваете в Telegram.",
+      "question_type": "text",
+      "answer_value": "Kun.uz",
+      "answer_text": "Kun.uz",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:09:59"
+    },
+    "student_q011": {
+      "question_text": "Instagramda eng ko'p kuzatadigan TOP 5 ta sahifangizni yozing.",
+      "question_text_uz": "Instagramda eng ko'p kuzatadigan TOP 5 ta sahifangizni yozing.",
+      "question_text_ru": "Напишите ТОП-5 страниц, которые вы чаще всего просматриваете в Instagram.",
+      "question_type": "text",
+      "answer_value": "yoq",
+      "answer_text": "yoq",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:02"
+    },
+    "student_q012": {
+      "question_text": "YouTubeda eng ko'p kuzatadigan TOP 5 ta kanalingizni yozing.",
+      "question_text_uz": "YouTubeda eng ko'p kuzatadigan TOP 5 ta kanalingizni yozing.",
+      "question_text_ru": "Напишите ТОП-5 каналов, которые вы чаще всего смотрите на YouTube.",
+      "question_type": "text",
+      "answer_value": "yoq",
+      "answer_text": "yoq",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:06"
+    },
+    "student_q013": {
+      "question_text": "Yangi mahsulot yoki xizmat haqida qayerdan bilib olasiz?",
+      "question_text_uz": "Yangi mahsulot yoki xizmat haqida qayerdan bilib olasiz?",
+      "question_text_ru": "Откуда вы узнаёте о новых товарах или услугах?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "5"
+      ],
+      "answer_text": "Google qidiruvi",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:09"
+    },
+    "student_q014": {
+      "question_text": "Asosan kimlar bilan vaqt o'tkazasiz?",
+      "question_text_uz": "Asosan kimlar bilan vaqt o'tkazasiz?",
+      "question_text_ru": "С кем вы в основном проводите время?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "5"
+      ],
+      "answer_text": "Qo'shnilar",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:13"
+    },
+    "student_q015": {
+      "question_text": "Asosan qayerdan kiyim-kechak xarid qilasiz?",
+      "question_text_uz": "Asosan qayerdan kiyim-kechak xarid qilasiz?",
+      "question_text_ru": "Где вы в основном покупаете одежду?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "3"
+      ],
+      "answer_text": "Online (Instagram, Telegram)",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:16"
+    },
+    "student_q016": {
+      "question_text": "Asosan qayerda ovqatlanasiz?",
+      "question_text_uz": "Asosan qayerda ovqatlanasiz?",
+      "question_text_ru": "Где вы в основном питаетесь?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "5"
+      ],
+      "answer_text": "Ish joyidagi oshxona",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:20"
+    },
+    "student_q017": {
+      "question_text": "Haftasiga o'rtacha qancha marta jamoat transportidan foydalanasiz?",
+      "question_text_uz": "Haftasiga o'rtacha qancha marta jamoat transportidan foydalanasiz?",
+      "question_text_ru": "Сколько раз в неделю вы в среднем пользуетесь общественным транспортом?",
+      "question_type": "single_choice",
+      "answer_value": "4",
+      "answer_text": "10-15 marta",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:22"
+    },
+    "student_q018": {
+      "question_text": "Xarid qilishda ko'proq nimaga e'tibor berasiz?",
+      "question_text_uz": "Xarid qilishda ko'proq nimaga e'tibor berasiz?",
+      "question_text_ru": "На что вы прежде всего обращаете внимание при покупке?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "6"
+      ],
+      "answer_text": "Tashqi ko'rinish / Dizayn",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:25"
+    },
+    "student_q019": {
+      "question_text": "Oyiga ta'lim va rivojlanishga (kurs, kitob va h.k.) qancha pul sarflaysiz?",
+      "question_text_uz": "Oyiga ta'lim va rivojlanishga (kurs, kitob va h.k.) qancha pul sarflaysiz?",
+      "question_text_ru": "Сколько денег в месяц вы тратите на образование и развитие (курсы, книги и т.д.)?",
+      "question_type": "single_choice",
+      "answer_value": "2",
+      "answer_text": "100 000 so'mgacha",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:27"
+    },
+    "student_q020": {
+      "question_text": "AIFU haqida birinchi marta qayerdan eshitgansiz?",
+      "question_text_uz": "AIFU haqida birinchi marta qayerdan eshitgansiz?",
+      "question_text_ru": "Где вы впервые услышали об AIFU?",
+      "question_type": "single_choice",
+      "answer_value": "4",
+      "answer_text": "Maktab yoki o'qituvchidan",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:30"
+    },
+    "student_q021": {
+      "question_text": "Nima uchun aynan AIFUni tanladingiz?",
+      "question_text_uz": "Nima uchun aynan AIFUni tanladingiz?",
+      "question_text_ru": "Почему вы выбрали именно AIFU?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "8"
+      ],
+      "answer_text": "O'qituvchilar haqida yaxshi eshitdim",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:35"
+    },
+    "student_q022": {
+      "question_text": "Hozirgi ta'lim jarayonidan qanchalik mamnunsiz? ( 1dan 10 gacha baholang)",
+      "question_text_uz": "Hozirgi ta'lim jarayonidan qanchalik mamnunsiz? ( 1dan 10 gacha baholang)",
+      "question_text_ru": "Насколько вы довольны текущим учебным процессом? (оцените от 1 до 10)",
+      "question_type": "single_choice",
+      "answer_value": "7",
+      "answer_text": "7",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:39"
+    },
+    "student_q023": {
+      "question_text": "AIFUni do’st yoki tanishlaringizga tavsiya etasizmi?",
+      "question_text_uz": "AIFUni do’st yoki tanishlaringizga tavsiya etasizmi?",
+      "question_text_ru": "Порекомендуете ли вы AIFU своим друзьям или знакомым?",
+      "question_type": "single_choice",
+      "answer_value": "1",
+      "answer_text": "Ha, albatta tavsiya qilaman",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:41"
+    },
+    "student_q024": {
+      "question_text": "Universitetdan diplom bilan birga yana nima olishni xohlaysiz?",
+      "question_text_uz": "Universitetdan diplom bilan birga yana nima olishni xohlaysiz?",
+      "question_text_ru": "Что ещё, помимо диплома, вы хотите получить от университета?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "7"
+      ],
+      "answer_text": "Shaxsiy rivojlanish",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:45"
+    },
+    "student_q025": {
+      "question_text": "Universitetni bitirgandan keyin qanday reja qilasiz?",
+      "question_text_uz": "Universitetni bitirgandan keyin qanday reja qilasiz?",
+      "question_text_ru": "Каковы ваши планы после окончания университета?",
+      "question_type": "single_choice",
+      "answer_value": "3",
+      "answer_text": "O'z biznesimni boshlayman",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:47"
+    },
+    "student_q026": {
+      "question_text": "Universitetni bitirgandan keyin sizni eng ko'p nima xavotirga soladi?",
+      "question_text_uz": "Universitetni bitirgandan keyin sizni eng ko'p nima xavotirga soladi?",
+      "question_text_ru": "Что вас больше всего беспокоит после окончания университета?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "8"
+      ],
+      "answer_text": "Boshqa (yozaman)",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:49"
+    },
+    "student_q027": {
+      "question_text": "O'qish davomida eng ko'p qaysi muammo bilan duch kelasiz?",
+      "question_text_uz": "O'qish davomida eng ko'p qaysi muammo bilan duch kelasiz?",
+      "question_text_ru": "С какими проблемами вы чаще всего сталкиваетесь в процессе учёбы?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "3"
+      ],
+      "answer_text": "Ta'lim sifatidan norozilik",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:54"
+    },
+    "student_q028": {
+      "question_text": "O'qish davomida eng ko'p qaysi jarayon yoki narsalar ko’proq xursand qildi?",
+      "question_text_uz": "O'qish davomida eng ko'p qaysi jarayon yoki narsalar ko’proq xursand qildi?",
+      "question_text_ru": "Какие процессы или события в период учёбы принесли вам наибольшую радость?",
+      "question_type": "long_text",
+      "answer_value": "yoq",
+      "answer_text": "yoq",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:10:58"
+    },
+    "student_q029": {
+      "question_text": "Universitetdan qanday qo'llab-quvvatlash ko'proq kerak bo'ladi?",
+      "question_text_uz": "Universitetdan qanday qo'llab-quvvatlash ko'proq kerak bo'ladi?",
+      "question_text_ru": "Какая поддержка со стороны университета вам нужна больше всего?",
+      "question_type": "multi_choice",
+      "answer_value": [
+        "5"
+      ],
+      "answer_text": "Amaliy loyihalar va stajlar",
+      "skipped": false,
+      "answered_at": "2026-03-18T14:11:01"
+    }
+  }
+}
