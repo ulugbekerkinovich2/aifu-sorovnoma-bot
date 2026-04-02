@@ -16,25 +16,29 @@ OUTPUT_XLSX = BASE_DIR / "questionnaire" / "aifu_questionnaire_config_bilingual_
 
 SURVEY_CODES = {
     "student": {
-        "uz": "TALABALAR SOROVNOMASI  (Bakalavr va Magistr)",
+        "uz_source": "TALABALAR SOROVNOMASI  (Bakalavr va Magistr)",
+        "uz_title": "TALABALAR SO'ROVNOMASI (Bakalavr va Magistr)",
         "ru": "АНКЕТА ДЛЯ СТУДЕНТОВ (Бакалавр и Магистр)",
         "audience_uz": "Talabalar",
         "audience_ru": "Студенты",
     },
     "employee": {
-        "uz": "XODIMLAR SOROVNOMASI",
+        "uz_source": "XODIMLAR SOROVNOMASI",
+        "uz_title": "XODIMLAR SO'ROVNOMASI",
         "ru": "АНКЕТА ДЛЯ СОТРУДНИКОВ",
         "audience_uz": "Xodimlar",
         "audience_ru": "Сотрудники",
     },
     "parent": {
-        "uz": "OTA-ONALAR SOROVNOMASI",
+        "uz_source": "OTA-ONALAR SOROVNOMASI",
+        "uz_title": "OTA-ONALAR SO'ROVNOMASI",
         "ru": "АНКЕТА ДЛЯ РОДИТЕЛЕЙ",
         "audience_uz": "Ota-onalar",
         "audience_ru": "Родители",
     },
     "applicant": {
-        "uz": "ABITURIYENTLAR SOROVNOMASI",
+        "uz_source": "ABITURIYENTLAR SOROVNOMASI",
+        "uz_title": "ABITURIYENTLAR SO'ROVNOMASI",
         "ru": "АНКЕТА ДЛЯ АБИТУРИЕНТОВ",
         "audience_uz": "Abituriyentlar",
         "audience_ru": "Абитуриенты",
@@ -94,7 +98,9 @@ def extract_lines(docx_path: Path) -> List[str]:
 
 
 def is_survey_header(line: str, lang: str) -> bool:
-    return any(info[lang] == line for info in SURVEY_CODES.values())
+    if lang == "uz":
+        return any(info["uz_source"] == line for info in SURVEY_CODES.values())
+    return any(info["ru"] == line for info in SURVEY_CODES.values())
 
 
 def is_block_header(line: str, lang: str) -> bool:
@@ -368,7 +374,7 @@ def build_workbook(uz_surveys: List[ParsedSurvey], ru_surveys: List[ParsedSurvey
         surveys_ws.append(
             [
                 survey_code,
-                normalize_text(uz_survey.title),
+                normalize_text(survey_info["uz_title"]),
                 normalize_text(ru_survey.title),
                 survey_info["audience_uz"],
                 survey_info["audience_ru"],
